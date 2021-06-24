@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="UC San Diego American Institute of Aeronautics and Astronautics Student Branch - The UCSD AIAA Student Branch is a pre-professional student organization with the goal of connecting students to a national network of engineers, and promoting student interest in aerospace.">
+  <meta name="keywords"
+    content="AIAA,American Institute of Aeronautics and Astronautics,UCSD AIAA,UCSD,UC San Diego,Jacobs School of Engineering,JSoE,Student Org,Aerospace Engineering,San Diego">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <link rel="stylesheet" href="./css/bootstrap.css">
+
+  <title>AIAA at UCSD</title>
+
+  <link href='fullcalendar/core/main.css' rel='stylesheet' />
+  <link href='fullcalendar/daygrid/main.css' rel='stylesheet' />
+  <link href='fullcalendar/packages/timegrid/main.css' rel='stylesheet' />
+  <link href='fullcalendar/packages/list/main.css' rel='stylesheet' />
+
+  <script src='fullcalendar/core/main.js'></script>
+  <script src='fullcalendar/daygrid/main.js'></script>
+  <script src='fullcalendar/packages/timegrid/main.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/google-calendar/main.min.js"></script>
+  <script src="fullcalendar/packages/list/main.js"></script>
+  <script src="fullcalendar/packages/interaction/main.js"></script>
+
+  <script src="https://kit.fontawesome.com/7cbfd99a99.js" crossorigin="anonymous"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+
+      let calendar = new FullCalendar.Calendar(calendarEl, {
+        plugins: ["dayGrid", "timeGrid", "list", "interaction", "googleCalendar"],
+        initialView: 'listWeek',
+        header: {
+          left: 'dayGridMonth,listWeek',
+          center: 'title',
+          right: 'prev,next'
+        },
+        selectable: true,
+        googleCalendarApiKey: "AIzaSyA17ClxZF4FnbXZSyOCKH0qwENuoEpgKhc",
+        events: {
+          googleCalendarId: "c_1t03vk5u6sa086lmhr7v469fno@group.calendar.google.com"
+        },
+        eventClick: function (info) {
+          info.jsEvent.preventDefault(); // don't let the browser navigate
+
+          if (info.event.url) {
+            window.open(info.event.url, 'gcalevent', 'width=700,height=600');
+          }
+        },
+      });
+
+      calendar.render();
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container_main">
+    <header>
+      <!-- Nav-->
+      <nav class="main-nav">
+        <a href="index.html">
+          <img src="image/aiaa_logo_ucsd_fc.png" alt="AIAA" class="logo">
+        </a>
+        <ul class="main-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Showcase -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-pause="false">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div class="item active first-item">
+          <img src="./image/gbmcompressed.jpg" alt="Winter GBM One">
+          <div class="carousel-caption">
+            <h1>UC San Diego</h1>
+            <h4>American Institute of Aeronautics and Astronautics</h4>
+          </div>
+        </div>
+
+        <div class="item second-item">
+          <img src="./image/AIMreveal.jpg" alt="AIM Reveal">
+          <div class="carousel-caption">
+            <h1>UC San Diego</h1>
+            <h4>American Institute of Aeronautics and Astronautics</h4>
+          </div>
+        </div>
+
+        <div class="item third-item">
+          <img src="./image/NASAartemis.jpg" alt="NASAWatchParty">
+          <div class="carousel-caption">
+            <h1>UC San Diego</h1>
+            <h4>American Institute of Aeronautics and Astronautics</h4>
+          </div>
+        </div>
+
+        <div class="item fourth-item">
+          <img src="./image/miramar.jpg" alt="Miramar Airshow">
+          <div class="carousel-caption">
+            <h1>UC San Diego</h1>
+            <h4>American Institute of Aeronautics and Astronautics</h4>
+          </div>
+        </div>
+
+        <div class="item five-item">
+          <img src="./image/bonfire.jpg" alt="Smore at the shore bonfire">
+          <div class="carousel-caption">
+            <h1>UC San Diego</h1>
+            <h4>American Institute of Aeronautics and Astronautics</h4>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <section class="events">
+    <h1>Upcoming Events</h1>
+    <div class="container">
+      <div id="calendar">
+      </div>
+    </div>
+    <footer class="container-footer">
+      <div class="footer-block">
+
+        <div class="left-side">
+          <h3>Newsletter</h3>
+          <p>Stay up to date with AIAA by subscribing to our newsletter</p>
+          <form name="email-form"
+            action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSdxOkgPKbxlbyzd67oFrUZQKSFn6Y4dUycmmHv52hCLexv6sA/formResponse"
+            target="_self" method="POST">
+            <div class="email-form">
+              <span class="form-control-wrap">
+                <input type="email" name="entry.119443490" id="email" size="40" class="form-control"
+                  placeholder="Email" />
+              </span>
+              <button type="submit" class="form-control submit" onclick="resetform()">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="right-side">
+          <h3>Follow Us</h3>
+          <a href="https://www.facebook.com/ucsdaiaa/" target="_blank">
+            <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          <a href="https://www.instagram.com/ucsd_aiaa/" target="_blank">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          <a href="https://discord.gg/jpHmEWz" target="_blank">
+            <i class="fab fa-discord fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </section>
+  <script src="base.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script>
+  function start() {
+    // 2. Initialize the JavaScript client library.
+    gapi.client.init({
+      'apiKey': 'AIzaSyB2JFiY2ahOiH3o5_Y-YaMI-_eJwGmx288',
+      // clientId and scope are optional if auth is not required.
+      'clientId': '356979671421-5fnb0dicivm33q7e80hbh4tjh4palsq6.apps.googleusercontent.com',
+      'scope': 'profile',
+    }).then(function() {
+      // 3. Initialize and make the API request.
+      return gapi.client.request({
+        'path': 'https://www.googleapis.com/drive/v3/files',
+      })
+    }).then(function(response) {
+      console.log(response.result);
+    }, function(reason) {
+      console.log('Error: ' + reason.result.error.message);
+    });
+  };
+  // 1. Load the JavaScript client library.
+  gapi.load('client', start);
+  </script>
+</body>
+
+</html>
