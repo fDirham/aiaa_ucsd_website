@@ -10,13 +10,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
-  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
 
   <title>AIAA at UCSD</title>
 
@@ -35,11 +35,12 @@
   <script src="https://kit.fontawesome.com/7cbfd99a99.js" crossorigin="anonymous"></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
+    document.addEventListener( 'DOMContentLoaded', function ()
+    {
+      var calendarEl = document.getElementById( 'calendar' );
 
-      let calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: ["dayGrid", "timeGrid", "list", "interaction", "googleCalendar"],
+      let calendar = new FullCalendar.Calendar( calendarEl, {
+        plugins: [ "dayGrid", "timeGrid", "list", "interaction", "googleCalendar" ],
         initialView: 'listWeek',
         header: {
           left: 'dayGridMonth,listWeek',
@@ -51,17 +52,19 @@
         events: {
           googleCalendarId: "c_1t03vk5u6sa086lmhr7v469fno@group.calendar.google.com"
         },
-        eventClick: function (info) {
+        eventClick: function ( info )
+        {
           info.jsEvent.preventDefault(); // don't let the browser navigate
 
-          if (info.event.url) {
-            window.open(info.event.url, 'gcalevent', 'width=700,height=600');
+          if ( info.event.url )
+          {
+            window.open( info.event.url, 'gcalevent', 'width=700,height=600' );
           }
         },
-      });
+      } );
 
       calendar.render();
-    });
+    } );
   </script>
 </head>
 
@@ -191,26 +194,30 @@
   <script src="base.js"></script>
   <script src="https://apis.google.com/js/api.js"></script>
   <script>
-  function start() {
-    // 2. Initialize the JavaScript client library.
-    gapi.client.init({
-      'apiKey': 'AIzaSyB2JFiY2ahOiH3o5_Y-YaMI-_eJwGmx288',
-      // clientId and scope are optional if auth is not required.
-      'clientId': '356979671421-5fnb0dicivm33q7e80hbh4tjh4palsq6.apps.googleusercontent.com',
-      'scope': 'profile',
-    }).then(function() {
-      // 3. Initialize and make the API request.
-      return gapi.client.request({
-        'path': 'https://www.googleapis.com/drive/v3/files',
-      })
-    }).then(function(response) {
-      console.log(response.result);
-    }, function(reason) {
-      console.log('Error: ' + reason.result.error.message);
-    });
-  };
-  // 1. Load the JavaScript client library.
-  gapi.load('client', start);
+    function start()
+    {
+      // 2. Initialize the JavaScript client library.
+      gapi.client.init( {
+        'apiKey': 'AIzaSyB2JFiY2ahOiH3o5_Y-YaMI-_eJwGmx288',
+        // clientId and scope are optional if auth is not required.
+        'clientId': '356979671421-5fnb0dicivm33q7e80hbh4tjh4palsq6.apps.googleusercontent.com',
+        'scope': 'profile',
+      } ).then( function ()
+      {
+        // 3. Initialize and make the API request.
+        return gapi.client.request( {
+          'path': 'https://www.googleapis.com/drive/v3/files',
+        } )
+      } ).then( function ( response )
+      {
+        console.log( response.result );
+      }, function ( reason )
+      {
+        console.log( 'Error: ' + reason.result.error.message );
+      } );
+    };
+    // 1. Load the JavaScript client library.
+    gapi.load( 'client', start );
   </script>
 </body>
 
